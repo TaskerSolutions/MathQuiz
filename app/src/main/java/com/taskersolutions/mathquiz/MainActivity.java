@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
@@ -65,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
         tv_timer = findViewById(R.id.tv_timer);
         tv_message = findViewById(R.id.tv_message);
 
-        progress_timer = findViewById(R.id.prog_timer);
+        progress_timer = findViewById(R.id.progress_timer);
 
         tv_timer.setText("0Sec");
         tv_question.setText("");
