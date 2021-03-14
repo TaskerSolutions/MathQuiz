@@ -89,10 +89,9 @@
             android:layout_weight="1">
 
             <Button
-                style="@style/CustomStyleButton"
-                android:text="12"
                 android:id="@+id/btn_answer0"
-                android:background="#3867d6"/>
+                style="@style/CustomStyleButton"
+                android:background="#3867d6" />
 
             <Button
                 style="@style/CustomStyleButton"
