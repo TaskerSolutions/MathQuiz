@@ -1,6 +1,8 @@
 package com.taskersolutions.mathquiz;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
@@ -60,6 +62,10 @@ public class MainActivity extends AppCompatActivity {
         btn_answer1 = findViewById(R.id.btn_answer1);
         btn_answer2 = findViewById(R.id.btn_answer2);
         btn_answer3 = findViewById(R.id.btn_answer3);
+        btn_answer0.setEnabled(false);
+        btn_answer1.setEnabled(false);
+        btn_answer2.setEnabled(false);
+        btn_answer3.setEnabled(false);
 
         tv_score = findViewById(R.id.tv_score);
         tv_question = findViewById(R.id.tv_question);
@@ -93,8 +99,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 Button buttonClicked = (Button) v;
-
                 int answerSelected = Integer.parseInt(buttonClicked.getText().toString());
+
                 g.checkAnswer(answerSelected);
                 tv_score.setText(Integer.toString(g.getScore()) + " points");
 
@@ -106,6 +112,18 @@ public class MainActivity extends AppCompatActivity {
         btn_answer1.setOnClickListener(answerButtonClickListener);
         btn_answer2.setOnClickListener(answerButtonClickListener);
         btn_answer3.setOnClickListener(answerButtonClickListener);
+
+        Button privacyPolicyButton = (Button) this.findViewById(R.id.privacyPolicyButton);
+        privacyPolicyButton.setTextSize(18);
+        privacyPolicyButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // TODO Auto-generated method stub
+                Intent intent = new Intent(getApplicationContext(),
+                        PrivacyPolicyActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 
